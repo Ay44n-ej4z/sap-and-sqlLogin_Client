@@ -109,7 +109,7 @@ async function CallBAPI(FUNCTION_MODULE, props) {
 /**
  * Name: Connect
  * Description: Function to call connect to sap system using RFC
- * Created By: Suman
+ * Created By: Ayaan
  * Created At:
  */
 function Connect() {
