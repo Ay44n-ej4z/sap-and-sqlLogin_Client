@@ -1,47 +1,20 @@
-const cors = require('cors');
-const express  = require('express');
-const bodyParser = require('body-parser');
-var typeorm = require("typeorm"); var EntitySchema = typeorm.EntitySchema;
-const http = require('http');
-const app  = require('./app');
-const router = express.Router();
-const PORT = 5000;
+const express = require('express');
+const cors = require('cors')
+const app = express()
 const noderfc = require("node-rfc");
+const PORT = 5000;
+const data = require("./router/data");
 
 app.use(cors({
     origin: "*",
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
+
 }))
-app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(express.json());
 
 
-
-app.use(express.json())
-
-var connection =  typeorm.createConnection({
-    "type": "mysql",
-    "host": "localhost",
-    "port": 3306,
-    "username": "root",
-    "password": "",
-    "database": "practice",
-    "synchronize": false,
-    "logging": false,
-    entities: [
-        new EntitySchema(require("./entities/posts.json"))
-    ]
-}).then(function (connection) {
-
-    const server =http.createServer(app);
-    // server.listen(5000);
-
-}).catch(function (error) {
-    console.log("Error: ", error)
-    return;
-});
-
-
-app.get('/sapUserDetails', async(req, res) => {
+app.get('/', async(req, res) => {
     try {
         function pad_with_zeroes(number, length) {
     
@@ -68,7 +41,7 @@ app.get('/sapUserDetails', async(req, res) => {
         // const data = await CallBAPI("BAPI_VENDOR_GETDETAIL", {
         //     VENDORNO: "0000000015",
         // });
-        const data = await CallBAPI("BAPI_USER_GET_DETAIL",{
+        const data = await CallBAPI("BAPI_USER_GETDETAIL",{
             USERNAME: 'P9TRNG',
         })
         res.send(data)
@@ -78,13 +51,38 @@ app.get('/sapUserDetails', async(req, res) => {
 
 })
 
+// const noderfc = require("node-rfc");
+
+// init();
+
+/**
+ * Name: init
+ * Description: Function start point
+ * Created By: Suman
+ * Created At:
+ */
+// async function init() {
+//     app.get('/', async(req, res) => {
+
+//     try {
+//         const data = await CallBAPI( "BAPI_USER_GET_DETAIL",{
+//             USERNAME: 'p9trng',
+//         },);
+//         res.send(data)
+//         // console.log(data);
+
+//     } catch (e) {
+//         console.log(e);
+//     }
+// })
+// }
 
 /**
  * Name: CallBAPI
  * Description: Function to call BAPI to get data
  * @param FUNCTION_MODULE Send the Function Module name
  * @param props send the parameters to pass.
- * Created By: Ayaan
+ * Created By: Suman
  * Created At:
  */
 async function CallBAPI(FUNCTION_MODULE, props) {
@@ -141,9 +139,7 @@ function Connect() {
 
 // Done!!
 // Ayaan Ejaz, Today at 4:00 PM
-module.exports = connection
 
-
-app.listen(PORT, ()=> {
-    console.log(`Running app ${PORT}`);
+app.listen(PORT, () => {
+    console.log(`Running on port ${PORT}`)
 })

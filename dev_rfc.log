@@ -1,0 +1,32 @@
+
+**** Log file opened at 2022-01-17 16:44:45.861295 UTC+05:30 (India Standard Time), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 9, Compiled on Dec 11 2021 01:53:21
+ CPIC library: 753.2021.05.10 version 3, NI library: 40, Kernel Release: 753 Patch Level 915
+ Current working directory: D:\loginBackend, Program: node
+ Hardware: PC with Windows NT 4x AMD64 Level 6 (Mod 69 Step 1), Operating_system: Windows NT 10.0
+ Hostname: DESKTOP-NBIGT0J, IP address: 192.168.29.230, IPv6 address: fe80::994f:efa6:4422:418d
+
+2022-01-17 16:44:45.917353 [08636] >> Info entry
+	Did not find config file D:\loginBackend\sapnwrfc.ini.
+
+**** Log file opened at 2022-01-17 17:21:16.722443 UTC+05:30 (India Standard Time), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 9, Compiled on Dec 11 2021 01:53:21
+ CPIC library: 753.2021.05.10 version 3, NI library: 40, Kernel Release: 753 Patch Level 915
+ Current working directory: D:\loginBackend, Program: node
+ Hardware: PC with Windows NT 4x AMD64 Level 6 (Mod 69 Step 1), Operating_system: Windows NT 10.0
+ Hostname: DESKTOP-NBIGT0J, IP address: 192.168.29.230, IPv6 address: fe80::994f:efa6:4422:418d
+
+2022-01-17 17:21:16.762511 [07776] >> Error entry
+	[Handle: 1643190714544	ConvID: 23491898	Target: m1423	SysID: IDS	SysNr: 05	User: P9TRNG	Mandant: 800	Language: E	Codepage: 4103]
+	RfcABAPException: Key: FU_NOT_FOUND, Code: RFC_ABAP_EXCEPTION, Message: ID:FL Type:E Number:046 BAPI_USER_GETDETAIL
+
+**** Log file opened at 2022-01-17 17:26:54.056973 UTC+05:30 (India Standard Time), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 9, Compiled on Dec 11 2021 01:53:21
+ CPIC library: 753.2021.05.10 version 3, NI library: 40, Kernel Release: 753 Patch Level 915
+ Current working directory: D:\loginBackend, Program: node
+ Hardware: PC with Windows NT 4x AMD64 Level 6 (Mod 69 Step 1), Operating_system: Windows NT 10.0
+ Hostname: DESKTOP-NBIGT0J, IP address: 192.168.29.230, IPv6 address: fe80::994f:efa6:4422:418d
+
+2022-01-17 17:26:54.070982 [08120] >> Error entry
+	[Handle: 2169133962272	ConvID: 23844011	Target: m1423	SysID: IDS	SysNr: 05	User: P9TRNG	Mandant: 800	Language: E	Codepage: 4103]
+	RfcABAPException: Key: FU_NOT_FOUND, Code: RFC_ABAP_EXCEPTION, Message: ID:FL Type:E Number:046 BAPI_USER_GET_LIST
